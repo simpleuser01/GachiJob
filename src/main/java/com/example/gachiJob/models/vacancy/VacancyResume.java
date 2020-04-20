@@ -16,14 +16,14 @@ public class VacancyResume {
     @Column(name = "vacancy_id_fk")
     private long vacancyIdFk;
 
-    @Column(name = "vacancy_id_fk")
+    @Column(name = "resume_id_fk")
     private long resumeIdFk;
 
     @Column(name = "date_of_response")
     private LocalDateTime responseDate;
 
     @ManyToOne
-    @JoinColumn(name = "vacancy_id_fk", referencedColumnName = "vacancy_id")
+    @JoinColumn(name = "vacancy_id_fk", referencedColumnName = "vacancy_id", insertable = false, updatable = false)
     Vacancy vacancy;
 
     //toDO @ManyToOne for resume
@@ -71,4 +71,6 @@ public class VacancyResume {
     public void setVacancy(Vacancy vacancy) {
         this.vacancy = vacancy;
     }
+
+
 }
