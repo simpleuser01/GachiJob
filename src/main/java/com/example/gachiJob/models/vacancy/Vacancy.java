@@ -1,7 +1,8 @@
-package com.example.gachiJob.models;
+package com.example.gachiJob.models.vacancy;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "vacancy")
@@ -38,6 +39,9 @@ public class Vacancy {
 
     @Column(name = "contacts")
     private String contacts;
+
+    @OneToMany(mappedBy = "vacancy")
+    List<VacancyResume> vacancyResumes;
 
     public Vacancy() {
     }
@@ -120,5 +124,13 @@ public class Vacancy {
 
     public void setContacts(String contacts) {
         this.contacts = contacts;
+    }
+
+    public List<VacancyResume> getVacancyResumes() {
+        return vacancyResumes;
+    }
+
+    public void setVacancyResumes(List<VacancyResume> vacancyResumes) {
+        this.vacancyResumes = vacancyResumes;
     }
 }

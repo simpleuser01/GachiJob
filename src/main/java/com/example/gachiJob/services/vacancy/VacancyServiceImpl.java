@@ -1,14 +1,14 @@
-package com.example.gachiJob.services;
+package com.example.gachiJob.services.vacancy;
 
-import com.example.gachiJob.models.Vacancy;
-import com.example.gachiJob.repo.VacancyRepo;
+import com.example.gachiJob.models.vacancy.Vacancy;
+import com.example.gachiJob.repo.vacancy.VacancyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class VacancyServiceImpl implements VacancyService{
+public class VacancyServiceImpl implements com.example.gachiJob.services.Service<Vacancy>{
 
     @Autowired
     VacancyRepo vacancyRepo;
