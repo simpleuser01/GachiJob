@@ -13,6 +13,11 @@ public class Vacancy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long vacancyId;
 
+
+
+
+
+
     @Column(name = "vacancy_name")
     private String vacancyName;
 
